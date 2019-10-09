@@ -1,4 +1,4 @@
-
+DEV_IMAGE := ckeyer/dev:tf-py3
 
 dev:
 	docker run --rm -it \

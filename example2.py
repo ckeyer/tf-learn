@@ -4,11 +4,14 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def add_layer(inputs, in_size, out_size, n_layer, activation_function=None):
-    layer_name = 'layer%s' % n_layer    
+    layer_name = 'layer%s' % n_layer
+
     with tf.name_scope(layer_name):
         with tf.name_scope('input'):
-            Weight = tf.Variable(tf.random_normal([in_size, out_size]), name='W')
+            Weight = tf.Variable(tf.random_normal(
+                [in_size, out_size]), name='W')
             tf.summary.histogram(layer_name + '/weights', Weight)
         with tf.name_scope('biase'):
             biases = tf.Variable(tf.zeros([1, out_size]) + 0.1, name='biase')
@@ -20,10 +23,10 @@ def add_layer(inputs, in_size, out_size, n_layer, activation_function=None):
         else:
             outputs = activation_function(Wx_plus_b)
         return outputs
-        
+
 
 def main():
-    x_data = np.linspace(-2, 2, num=300)[:, np.newaxis] # 300行
+    x_data = np.linspace(-2, 2, num=3000)[:, np.newaxis]  # 300行
     noise = np.random.normal(0, 0.05, x_data.shape)
     y_data = np.square(x_data) - 0.5 + noise
 
@@ -36,10 +39,12 @@ def main():
 
     # 比较预测值与实际值的差别 reduction_indices
     with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - predition), reduction_indices=[1]))
+        loss = tf.reduce_mean(tf.reduce_sum(
+            tf.square(ys - predition), reduction_indices=[1]))
         tf.summary.scalar('loss', loss)
     with tf.name_scope('train'):
-        train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss) # 0.1 学习效率
+        train_step = tf.train.GradientDescentOptimizer(
+            0.1).minimize(loss)  # 0.1 学习效率
     init = tf.global_variables_initializer()
     with tf.Session() as sess:
         merged = tf.summary.merge_all()
@@ -50,7 +55,7 @@ def main():
         ax.scatter(x_data, y_data)
         plt.ion()
         plt.show()
-        for i in range(10000):
+        for i in range(100000):
             sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
             if i % 50 == 0:
                 # print(i, sess.run(loss, feed_dict={xs: x_data, ys: y_data}))
