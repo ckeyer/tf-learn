@@ -1,4 +1,4 @@
-#!/Library/Frameworks/Python.framework/Versions/3.5/bin/python3
+#!/usr/bin/env python3
 
 import tensorflow as tf
 import numpy as np
@@ -48,14 +48,14 @@ def main():
     init = tf.global_variables_initializer()
     with tf.Session() as sess:
         merged = tf.summary.merge_all()
-        writer = tf.summary.FileWriter('/tmp/b', sess.graph)
+        writer = tf.summary.FileWriter('./bundles/2/', sess.graph)
         sess.run(init)
         fig = plt.figure()
         ax = fig.add_subplot(1, 1, 1)
         ax.scatter(x_data, y_data)
         plt.ion()
         plt.show()
-        for i in range(100000):
+        for i in range(1000):
             sess.run(train_step, feed_dict={xs: x_data, ys: y_data})
             if i % 50 == 0:
                 # print(i, sess.run(loss, feed_dict={xs: x_data, ys: y_data}))

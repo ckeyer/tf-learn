@@ -28,10 +28,10 @@ train = optimizer.minimize(loss)
 with tf.Session() as sess:
     init = tf.global_variables_initializer()
     sess.run(init)
-    for step in range(201000):
+    for step in range(2010):
         sess.run(train)
-        if step % 20 == 0:
-            sess.run(Weights)
-            sess.run(biases)
+        if step % 50 == 0:
+            print(sess.run(Weights))
+            print(sess.run(biases))
 
 print("over.")
