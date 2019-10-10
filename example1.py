@@ -31,7 +31,6 @@ with tf.Session() as sess:
     for step in range(2010):
         sess.run(train)
         if step % 50 == 0:
-            print(sess.run(Weights))
-            print(sess.run(biases))
+            print(sess.run(Weights), sess.run(biases))
 
 print("over.")

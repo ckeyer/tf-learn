@@ -2,12 +2,19 @@
 name = "pypi"
 url = "http://mirrors.aliyun.com/pypi/simple"
 # url = "https://pypi.org/simple"
-verify_ssl = true
+verify_ssl = false
 
 [dev-packages]
+grpcio-tools = "*"
+grpc-tools = "*"
+grpcio = "*"
 
 [packages]
 matplotlib = "*"
+grpcio = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3"
+
+[pipenv]
+allow_prereleases = true
