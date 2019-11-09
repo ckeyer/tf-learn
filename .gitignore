@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+.vscode/
 env/
 build/
 develop-eggs/
@@ -100,3 +101,5 @@ ENV/
 # mypy
 .mypy_cache/
 bundles
+Pipfile.lock
+
