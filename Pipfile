@@ -5,13 +5,13 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 verify_ssl = false
 
 [dev-packages]
-grpcio-tools = "*"
-grpc-tools = "*"
-grpcio = "*"
 
 [packages]
 matplotlib = "*"
 grpcio = "*"
+numpy = "*"
+grpcio-tools = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3"

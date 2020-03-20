@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+import sys
+
+print(sys.path)
+exit()
 
 print(9 / 4)
 print(9 // 4)
