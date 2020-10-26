@@ -5,6 +5,7 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 verify_ssl = false
 
 [dev-packages]
+jupyter = "*"
 
 [packages]
 matplotlib = "*"
@@ -12,6 +13,8 @@ grpcio = "*"
 numpy = "*"
 grpcio-tools = "*"
 tensorflow = "*"
+sklearn = "*"
+pandas = "*"
 
 [requires]
 python_version = "3"
