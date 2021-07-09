@@ -15,6 +15,7 @@ grpcio-tools = "*"
 tensorflow = "*"
 sklearn = "*"
 pandas = "*"
+keras = "*"
 
 [requires]
 python_version = "3"
