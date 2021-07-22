@@ -5,16 +5,16 @@ url = "http://mirrors.aliyun.com/pypi/simple"
 verify_ssl = false
 
 [dev-packages]
-jupyter = "*"
+# jupyter = "*"
 
 [packages]
-matplotlib = "*"
-grpcio = "*"
+# matplotlib = "*"
+# grpcio = "*"
+# grpcio-tools = "*"
+# sklearn = "*"
+# pandas = "*"
 numpy = "*"
-grpcio-tools = "*"
 tensorflow = "*"
-sklearn = "*"
-pandas = "*"
 keras = "*"
 
 [requires]
