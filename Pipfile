@@ -9,14 +9,14 @@ verify_ssl = false
 ipykernel = "*"
 
 [packages]
-# matplotlib = "*"
-# grpcio = "*"
-# grpcio-tools = "*"
-# sklearn = "*"
-# pandas = "*"
-numpy = "*"
-tensorflow = "*"
+matplotlib = "*"
+grpcio = "*"
+grpcio-tools = "*"
+sklearn = "*"
+pandas = "*"
 keras = "*"
+flask = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3"
